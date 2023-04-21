@@ -28,7 +28,7 @@ def print_welcome() -> None:
     print()
 
 
-def print_help() -> None: 
+def print_help() -> None:
     """ Print the help message """
     print('Type "help" to get a list of commands.')
     print()
@@ -58,7 +58,7 @@ def print_menu() -> None:
     print()
 
 
-def get_user() -> str: 
+def get_user() -> str:
     """ Get the user_name
     Returns:
         user_name (str)
@@ -68,17 +68,17 @@ def get_user() -> str:
     return user_name
 
 
-def get_rate() -> int: 
+def get_rate() -> str:
     """ Get the rate
     Returns:
-        rate (int)
+        rate (str)
     """
     rate = input(
-        'Would you like to rate this book? (hit return for blank): ').strip()
+        'Would you like to rate this book (1 - 5)? (hit return for blank): ').strip()
     return rate
 
 
-def get_comment() -> str: 
+def get_comment() -> str:
     """ Get the comment
     Returns:
         comment (str)
@@ -88,7 +88,7 @@ def get_comment() -> str:
     return comment
 
 
-def collect_book() -> str:  
+def collect_book() -> str:
     """ Get the command that whether to add to bookshelf
     Returns:
         collect (str): "y" or "n"
@@ -98,10 +98,10 @@ def collect_book() -> str:
     return collect.lower()
 
 
-def display_book(book: books_utils.Book) -> None: 
+def display_book(book: books_utils.Book) -> None:
     """ Display a detailed book profile including name, author, genre, rating, 
         reviews, intro, and users' ratings and comments
-    
+
     Args:   
         book (books_utils.Book)
     """
@@ -134,13 +134,13 @@ def display_book(book: books_utils.Book) -> None:
                     print()
 
 
-def multi_search(books_list: books_utils.BookList) -> books_utils.Book: 
+def multi_search(books_list: books_utils.BookList) -> books_utils.Book:
     """ When there are multiple search results, help the user to target 
         one book by id
-    
+
     Args:   
         books_list (books_utils.BookList) 
-        
+
     Return: 
         books_utils.Book: Should always be one book, since the id is unique
     """
@@ -149,9 +149,9 @@ def multi_search(books_list: books_utils.BookList) -> books_utils.Book:
     return book[0]
 
 
-def display_board(board: List[books_utils.Book], rank: int = 10) -> None: 
+def display_board(board: List[books_utils.Book], rank: int = 10) -> None:
     """ Display recommended books list
-    
+
     Args:   
         board (List[books_utils.Book]) 
         rank (int): defaults to 10, show 10 books
@@ -163,9 +163,9 @@ def display_board(board: List[books_utils.Book], rank: int = 10) -> None:
         print()
 
 
-def display_search(result: List[books_utils.Book]) -> None: 
+def display_search(result: List[books_utils.Book]) -> None:
     """ Display search results
-    
+
     Args:   
         result (List[books_utils.Book]) 
     """
@@ -175,16 +175,16 @@ def display_search(result: List[books_utils.Book]) -> None:
         print()
 
 
-def display_shelf(user: users_utils.User, shelf: books_utils.BookShelf) -> None:  
+def display_shelf(user: users_utils.User, shelf: books_utils.BookShelf) -> None:
     """ Display bookshelf
-    
+
     Args:   
         user (users_utils.User)  
         shelf (books_utils.BookShelf)
     """
     print(f"{shelf.name}'s bookshelf")
-    if user.name == shelf.name:  
-        # Use book id as the match key, if the book id is the same in both user and book side, 
+    if user.name == shelf.name:
+        # Use book id as the match key, if the book id is the same in both user and book side,
         # add rate information to bookshelf.
         for key, value in shelf.collects.items():
             if key in user.rates:

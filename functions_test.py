@@ -244,7 +244,13 @@ class Test_view_run(unittest.TestCase):
     def test_get_user(self, mock_input):
         """ Test view.get_user """
         user_name = view.get_user()
-        self.assertEqual(user_name, 'test')
+        self.assertEqual(user_name, 'test') 
+        
+    @patch('builtins.input', side_effect=['4'])
+    def test_get_rate(self, mock_input):
+        """ Test view.get_rate """
+        rate = view.get_rate()
+        self.assertEqual(rate, '4')
 
     @patch('builtins.input', side_effect=['test'])
     def test_get_comment(self, mock_input):

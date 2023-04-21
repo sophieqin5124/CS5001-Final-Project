@@ -32,10 +32,10 @@ class User:
         
         Args:  
             id (int): unique book id  
-            value (int): user's rate 
+            value (str): user's rate 
             min (int): defaults to 1, minimum rate 
             max (int): defaults to 5, maximum rate 
-        """    
+        """     
         if value < min:
             value = min
         if value > max:
