@@ -28,4 +28,7 @@ Before run the project, make sure you have already installed pandas and openpyxl
 pip install pandas 
 pip install openpyxl 
 ``` 
-Then run the run.py file, the project will be launched.
+Then run the run.py file, the project will be launched. 
+
+### Test functions result 
+![avatar](Readme_sources/run_tests_result.png) 
